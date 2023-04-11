@@ -1,0 +1,171 @@
+<html>
+    <head>
+        <link rel="icon" href="assets/favicon.png">
+        <title>Your Name</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="styles/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/bootstrap-icons.css">
+        <link href='styles/projects.css' rel="stylesheet">
+        <link href='styles/styles.css' rel="stylesheet">
+    </head>
+    <body class="text-light body">
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-md navbar-light bg-light container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-house"></i> Gabriel Macerato
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-options">
+                <i class="navbar-toggler-icon"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-options">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="resumetemplate.html">
+                            <i class="bi bi-person"></i> Resume
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">
+                            <i class="bi bi-trophy"></i> Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="interactive.html">
+                            <i class="bi bi-chat-dots"></i> Interactive
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="blog.html">
+                          <i class="bi bi-envelope"></i> Blog
+                      </a>
+                  </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mailto:gabrielmacerato@live.com">
+                            <i class="bi bi-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--Coding Projects Portfolio-->
+        <div class="container w-100">
+            <h1 class="display-1 mt-4 text-center">
+                <img src="assets/infinity.png" style="width:100px;height:100px;"> Projects
+            </h1>
+            <hr>
+            
+        <!-- END:Card 1 -->
+        <!-- START:Card 2 -->
+        
+        <!-- END:Card 2 -->
+            
+        <!-- END:Card Group -->
+        
+        </div>
+        <div class="d-flex dw-90 block w-90" style="width:80%;right:50%; background-repeat: no-repeat;">
+            <div class="d-flex flex-column">
+                <div>
+                    <ul>
+                        <li>
+                            <button class="projectbutton" onclick="decideProject(id)" id="Project1">
+                                Project1
+                            </button>
+                        </li>
+                        <li>
+                            <button class="projectbutton" onclick="decideProject(id)" id="Project2">
+                                Project2
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-group gap-2">
+            <!-- START: Card 1 -->
+                <div class="card bg-dark text-center position-absolute" id="project1">
+                    <div class="card-header">
+                        <img class="img-thumbnail" style="width:250px;height:250px;" src="assets/pothole.png">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Pothole Research App </h3>
+                        <p class="card-text text">
+                            <span class="moretext ">
+                            A research proposal by a University of New Orleans Professor,
+                            Dr Phani, was to see how often people were to be tricked by a fake login and give up their private data. To do this we created a pothole tracker app, that seemingly had a purpose to mark different potholes around the city. 
+                            The catch was that to log in you could either make an account, or use Fakebook, Twitter, or Google. Instead of actually connecting to these individual login services, we made fake login pages for each company and when they log in we store the data to an SQL sheet. We used React to create the app, css to style it, and SQL for the database. For our map we used the GoogleMap API.
+                            For this project I implemented the front-end framework to fake login screens. Creating them with React, Styling with CSS, and connecting to databases with JS.
+                        </span>
+                        </p>
+                        <button class="read-more-btn">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+                <!--card2-->
+                <div class="card bg-dark text-center position-absolute" id="project2" hidden>
+                    <div class="card-header">
+                        <img class="img-thumbnail" style="width:250px;height:250px;" src="assets/pothole.png">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Pothole Research App2 </h3>
+                        <p class="card-text text">
+                            <span class="dots">...</span><span class="moretext ">
+                            A research proposal by a University of New Orleans Professor,
+                            Dr Phani, was to see how often people were to be tricked by a fake login and give up their private data. To do this we created a pothole tracker app, that seemingly had a purpose to mark different potholes around the city. 
+                            The catch was that to log in you could either make an account, or use Fakebook, Twitter, or Google. Instead of actually connecting to these individual login services, we made fake login pages for each company and when they log in we store the data to an SQL sheet. We used React to create the app, css to style it, and SQL for the database. For our map we used the GoogleMap API.
+                            For this project I implemented the front-end framework to fake login screens. Creating them with React, Styling with CSS, and connecting to databases with JS.
+                        </span>
+                        </p>
+                        <button class="read-more-btn">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Bootstrap Bundle with Popper -->
+        <script>
+            // When the user clicks on <div>, open the popup
+            function poper() {
+              var popup = document.getElementById("myPopup");
+              popup.classList.toggle("show");
+            }
+            function decideProject(id){
+                switch(id){
+                    case('Project1'):
+                         element = document.getElementById('project1');
+                         hidden = element.getAttribute("hidden");
+                        if(hidden){
+                            element.removeAttribute("hidden");
+                        }else{
+                            element.setAttribute("hidden", "hidden");
+                        }
+                    case('Project2'):
+                        element = document.getElementById('project2');
+                        hidden = element.getAttribute("hidden");
+                        if(hidden){
+                            element.removeAttribute("hidden");
+                        }else{
+                            element.setAttribute("hidden", "hidden");
+                        }
+                }
+            }
+            const readMoreBtn = document.querySelector(".read-more-btn");
+            const text = document.querySelector(".text");
+            readMoreBtn.addEventListener("click", (e) => {
+                console.log('clicked');
+                text.classList.toggle("show-more");
+                if (readMoreBtn.innerText === "Read More") {
+                    readMoreBtn.innerText = "Read Less";
+                } else {
+                    readMoreBtn.innerText = "Read More";
+                }
+            });
+        </script>
+        <script src="scripts/bootstrap.bundle.min.js"></script>
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+        </body>
+</html>
